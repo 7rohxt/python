@@ -5,13 +5,13 @@ This repository contains Python assignment problems from the YouTube channel **C
 
 ---
 
-## 📂 Folder Details
+| **Folder/File**           | **Description**  |  
+|--------------------------|----------------|  
+| **Data-Files**           | Contains text and CSV files for read/write exercises. |  
+| **00-all-exercises.py**  | A single script consolidating all solutions for easy reference (*questions have been shortened for readability*). |  
+| **Notebooks (01-20)**    | Individual Jupyter notebooks with *detailed questions*, covering topics from basic variables to multithreading. |  
+| **README.md**            | Provides an overview of the repository structure and its purpose. |  
 
-- **Data-Files**: Contains text and CSV files for read/write exercises.  
-- **00-all-exercises.py**: A single script consolidating all solutions for easy reference (*questions have been shortened for readability*).  
-- **Notebooks (01-20)**: Individual Jupyter notebooks with *detailed questions*, covering topics from basic variables to multithreading.  
-- **README.md**: Provides an overview of the repository structure and its purpose.  
- 
 
 ---
 
