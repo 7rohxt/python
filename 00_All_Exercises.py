@@ -512,8 +512,57 @@ print (sq_set)
 
 # --------------------------------------------------------------------------------------------------------------------
 
+# 17 Exercise: Sets and Frozen Sets
 
+# 1. create any set and try to use frozenset(setname)
+
+set = {'apple','banana','carrot','apple'}
+fs = frozenset(set)
+print(fs)
+
+# 2. Find the elements in a given set that are not in another set
+
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+print(f"The elements in Set 1 which are not in Set 2 {set1 - set2}")
+print(f"The elements in Set 2 which are not in Set 1 {set2 - set1}")
 
 # --------------------------------------------------------------------------------------------------------------------
+
+# 18 Exercise: Commandline Argument Processing using argparse
+
+# 1. Take subject marks as command line arguments 
+
+# 2. Find average marks for the three subjects using command line input of marks.
+
+import argparse
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--physics", help="Physics Marks")
+    parser.add_argument("--chemistry", help="Chemistry Marks")
+    parser.add_argument("--maths", help="Maths Marks")
+    parser.add_argument("--operation", help="Operation",  choices = ['average'] )
+
+    args = parser.parse_args()
+
+    print(args.physics)
+    print(args.chemistry)
+    print(args.maths)
+    print(args.operation)
+
+    m1=int(args.physics)
+    m2=int(args.chemistry)
+    m3=int(args.maths)
+    average = None
+    if args.operation == 'average':
+        average = (m1+m2+m3)/3
+    else:
+        print("Unsupported Operation")
+    
+    print(f"Average: {average}")
+
 # --------------------------------------------------------------------------------------------------------------------
+
+
 # --------------------------------------------------------------------------------------------------------------------
