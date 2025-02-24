@@ -564,5 +564,56 @@ if __name__ == "__main__":
 
 # --------------------------------------------------------------------------------------------------------------------
 
+# 19 Exercise: Decorators
+
+# 1. Create a decorator function to check that the argument passed to the function factorial is a non-negative integer:
+# 2. Create a factorial function which finds the factorial of a number.
+# 3. Use the decorator to decorate the factorial function to only allow factorial of non-negative integers.
+
+def non_negative(func):
+    def wrapper(*args, **kwargs):
+      number = args[0]
+      if number < 0 or  number % 1 != 0:
+        return "The Number is a not a Positive Integer. Therefore, factorial cannot be performed."
+      return func(*args, **kwargs)
+    return wrapper
+
+@non_negative
+def factorial(number):
+        fact = 1
+        for i in range(1,int(number)+1):
+            fact *= i
+        return fact 
+
+print(f"Number: 4  Factorial: {factorial(4)}")
+print(f"Number: -3  Factorial: {factorial(-3)}")
+print(f"Number: 2.3  Factorial: {factorial(2.3)}")
 
 # --------------------------------------------------------------------------------------------------------------------
+
+#20 Exercise: Multithreading
+
+# 1. Create any multithreaded code using for loop for creating multithreads
+# 2. Print total active threads in multithreaded code using threading.active_count()
+
+import threading
+
+def calculate_square(numbers):
+    for n in numbers:
+        print(f"Square: {n*n}")
+
+arr = [2,4,7,9]
+
+threads = []
+for i in range(10):
+    th = threading.Thread(target=calculate_square, args = (arr,))
+    threads.append(th)
+    th.start()
+
+print(f"Active Threads: {threading.active_count()}")
+
+for th in threads:
+    th.join()
+
+# --------------------------------------------------------------------------------------------------------------------
+# The End
