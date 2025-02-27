@@ -1,7 +1,6 @@
 # Exercise: Commandline Argument Processing using argparse
-# 
+
 # 1. Take subject marks as command line arguments 
-# 
 # ```
 # example: 
 #     python3 cmd.py --physics 60 --chemistry 70 --maths 90
