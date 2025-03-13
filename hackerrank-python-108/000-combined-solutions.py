@@ -114,3 +114,24 @@ if __name__ == '__main__':
         print(student)
 
 #--------------------------------------------------------------------------------------------------------
+# 11. Finding the percentage
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    
+    total = 0
+    for name,marks in student_marks.items():
+        if name==query_name:
+            for i in marks:
+                total += i
+    
+
+    print(f"{total/3:.2f}") 
+
+#--------------------------------------------------------------------------------------------------------
