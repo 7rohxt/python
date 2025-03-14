@@ -1,3 +1,5 @@
+#Basic Data Types
+
 # 1. Say "Hello, World!"
 print("Hello, World!")
 
@@ -171,6 +173,14 @@ if __name__ == '__main__':
     print(hash(tuple(integer_list)))
 
 #--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+
+# STRINGS
+
 # 14. sWAP cASE
 
 def swap_case(s):
@@ -207,4 +217,113 @@ if __name__ == '__main__':
     print(result)
 
 #--------------------------------------------------------------------------------------------------------
-# 16.
+# 16. Whats you name
+
+def print_full_name(first, last):
+    print(f"Hello {first} {last}! You just delved into python.")
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+#--------------------------------------------------------------------------------------------------------
+# 17. Mutations
+
+def mutate_string(string, position, character):
+    string_list = list(string)
+    # string_list[position] = character
+    # string = "".join(string_list)
+    string = string[:position]+character+string[position+1:]
+    return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+#--------------------------------------------------------------------------------------------------------
+# 18. Find a string
+
+def count_substring(string, sub_string):
+    total = 0
+        
+    for i in range(len(string)):
+        if string[i:len(sub_string)+i] == sub_string:
+            total +=1
+            
+    return total
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+
+#--------------------------------------------------------------------------------------------------------
+# 19. String Validators
+
+if __name__ == '__main__':
+    s = input()
+
+    found_alnum = found_alpha = found_digit = found_lower = found_upper = False
+
+    for char in s:
+        if char.isalnum():
+            found_alnum = True
+        if char.isalpha():
+            found_alpha = True
+        if char.isdigit():
+            found_digit = True
+        if char.islower():
+            found_lower = True
+        if char.isupper():
+            found_upper = True
+
+        if found_alnum and found_alpha and found_digit and found_lower and found_upper:
+            break
+
+    print(found_alnum)
+    print(found_alpha)
+    print(found_digit)
+    print(found_lower)
+    print(found_upper)
+
+    # alternative approach using any()
+
+    # print(any(char.isalnum() for char in s))  
+    # print(any(char.isalpha() for char in s))  
+    # print(any(char.isdigit() for char in s))  
+    # print(any(char.islower() for char in s))  
+    # print(any(char.isupper() for char in s)) 
+#--------------------------------------------------------------------------------------------------------
+# 20. Text Allignment 
+
+#Replace all ______ with rjust, ljust or center. 
+
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).ljust(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).center(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
+
+#--------------------------------------------------------------------------------------------------------
