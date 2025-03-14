@@ -160,3 +160,15 @@ if __name__ == '__main__':
             list1.pop()
         elif cmd[0] == 'reverse':
             list1.reverse()
+
+#--------------------------------------------------------------------------------------------------------
+# 13. Tuples
+
+#python 2 
+if __name__ == '__main__':
+    n = int(raw_input()) # type: ignore
+    integer_list = map(int, raw_input().split()) # type: ignore
+    print(hash(tuple(integer_list)))
+
+#--------------------------------------------------------------------------------------------------------
+# 14. 
